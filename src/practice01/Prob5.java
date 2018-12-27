@@ -1,45 +1,27 @@
 package practice01;
 
-import com.sun.xml.internal.ws.util.StringUtils;
 
 public class Prob5 {
-
 	public static void main(String[] args) {
-
-		String[] tsn = new String[100];
 		
-		for(int i=0; i< 100; i++) {
-		   tsn[i] = Integer.toString(i);
-		   
-		   if(countCharacter(tsn[i],"3")==1 || countCharacter(tsn[i],"6")==1 || countCharacter(tsn[i],"9")==1) {
-			   System.out.println(tsn[i]+" 짝");   
-		   };
-		   if(countCharacter(tsn[i],"3")>1 || countCharacter(tsn[i],"6")>1 || countCharacter(tsn[i],"9")>1 ) {
-			System.out.println(tsn[i]+" 짝짝");   
-		   }
-		   if(countCharacter(tsn[i],"3")==1 &&  countCharacter(tsn[i],"6")==1) {
-			   System.out.println(tsn[i]+" 짝짝");
-		   };
-		   if(countCharacter(tsn[i],"3")==1 && countCharacter(tsn[i],"9")==1) {
-			   System.out.println(tsn[i]+" 짝짝");
-		   }
-		   if(countCharacter(tsn[i],"6")==1 && countCharacter(tsn[i],"9")==1) {
-			   System.out.println(tsn[i]+" 짝짝");
-		   }
-		}
-	}
+		for(int i=1; i<100; i++){
+			String stri = String.valueOf( i );
+			
+			int clap = 0;
 	
-	
-	//카운트세는 함수
-	public static int countCharacter(String str1, String str2) {
-		  String[] strArray;
-		  strArray = str1.split("");		  
-		  int num = 0;
-		    for (int i = 0; i < strArray.length; i++) {
-		        if(strArray[i].equals(str2)) {
-		            num++;
-		        }
-		    }
-		    return num;
+			for(int i1 =0 ; i1< stri.length(); i1++){
+				if(stri.charAt(i1) == '3' || stri.charAt(i1) == '6' || stri.charAt(i1) == '9'){
+					clap++;
+				};
+			}
+			
+			if(clap==0) continue ; 
+			
+			System.out.print( stri+ " ");
+			for(int i2=0; i2<clap; i2++){
+				System.out.print("짝");
+			}
+			System.out.println();
+		}		
 	}
 }
