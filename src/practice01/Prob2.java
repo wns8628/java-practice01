@@ -14,11 +14,13 @@ public class Prob2 {
 //		 j++;
 //		}
 		
-		//for문으로만이 젤간단
+		//for문
+		int a=1;
 		for(int j=10; j<=18; j++) {
-			for(int i =1; i<=j; i++) {
+			for(int i = a; i<=j; i++) {
 				System.out.print(i+" ");
 			}
+			a++;
 			System.out.println("");
 		}
 	
